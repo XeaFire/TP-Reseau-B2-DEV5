@@ -64,8 +64,7 @@ firstoctet = negative_numb1_shift | negative_numb2_shift
 print(utils.bytes_to_bits_binary(firstoctet.to_bytes(1, byteorder="big")))
 
 
-print(utils.bytes_to_bits_binary(negative_numb1_shift))
-print(utils.bytes_to_bits_binary(negative_numb2_shift))
+
 
 print(utils.bytes_to_bits_binary(numbs_bytes))
 # On envoie
