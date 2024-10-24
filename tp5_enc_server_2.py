@@ -40,9 +40,9 @@ while True:
         # res  = eval(data.decode())
         # conn.send(str(res).encode())
          
-        if data_bin[3] == 1:
+        if int(data_bin[3],2) == 1:
             numb1 = '-' + str(numb1)
-        if data_bin[4] == 1:
+        if int(data_bin[4],2) == 1:
             numb2 = '-' + str(numb2)
 
         print(str(numb1) + operateur + str(numb2))
