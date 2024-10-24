@@ -1,14 +1,17 @@
 import socket
 
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock.bind(('5.5.5.11', 13337))
-sock.listen()
-client, client_addr = sock.accept()
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+s.bind(('5.5.5.11', 13337))  
+
+s.listen(1)
+conn, addr = s.accept()
+
 
 while True:
     # On lit les 4 premiers octets qui arrivent du client
     # Car dans le client, on a fixé la taille du header à 4 octets
-    header = client.recv(4)
+    header = conn.recv(4)
     if not header:
         break
 
@@ -23,7 +26,7 @@ while True:
     bytes_received = 0
     while bytes_received < msg_len:
         # Si on reçoit + que la taille annoncée, on lit 1024 par 1024 octets
-        chunk = client.recv(min(msg_len - bytes_received,
+        chunk = conn.recv(min(msg_len - bytes_received,
                                 1024))
         if not chunk:
             raise RuntimeError('Invalid chunk received bro')
@@ -38,5 +41,5 @@ while True:
     message_received = b"".join(chunks).decode('utf-8')
     print(f"Received from client {message_received}")
 
-client.close()
-sock.close()
+conn.close()
+
