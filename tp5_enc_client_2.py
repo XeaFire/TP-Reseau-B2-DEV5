@@ -80,6 +80,7 @@ payload = firstoctet_bytes + numbs_bytes
 
 
 print(utils.bytes_to_bits_binary(numbs_bytes))
+print(utils.bytes_to_bits_binary(payload))
 # On envoie
 s.send(msg.encode())
 
