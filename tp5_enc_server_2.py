@@ -35,12 +35,20 @@ while True:
         numb1_bin = data_bin[9:28]
         numb2_bin = data_bin[28:48]
 
-        print(int(numb1_bin, 2))
-        print(int(numb2_bin, 2))
+        numb1 = int(numb1_bin, 2)
+        numb2 = int(numb2_bin, 2)
         # Evaluation et envoi du résultat
         # res  = eval(data.decode())
         # conn.send(str(res).encode())
          
+        if data_bin[3] == 1:
+            numb1 = '-' + str(numb1)
+        if data_bin[4] == 1:
+            numb2 = '-' + str(numb2)
+
+        res  = eval(numb1 + operateur + numb2)
+        conn.send(str(res).encode())
+        
     except socket.error:
         print("Error Occured.")
         break
