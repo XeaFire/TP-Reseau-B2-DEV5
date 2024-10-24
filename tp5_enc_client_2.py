@@ -71,7 +71,7 @@ operateur_bytes_shift = operateur_bytes << 6
 negative_numb1_shift = negative_numb1 << 5
 negative_numb2_shift = negative_numb2 << 4
 
-firstoctet = negative_numb1_shift | negative_numb2_shift
+firstoctet = operateur_bytes_shift | negative_numb1_shift | negative_numb2_shift
 print(utils.bytes_to_bits_binary(firstoctet.to_bytes(1, byteorder="big")))
 
 
