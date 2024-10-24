@@ -57,6 +57,17 @@ print(msg[len(msg) - len(str(numbers[1]))])
 
 
 print(operateur)
+
+if operateur == '+':
+    operateur_bytes = 1
+elif operateur == '-':
+    operateur_bytes = 2
+elif operateur == '*':
+    operateur_bytes = 3
+elif operateur == '/':
+    operateur_bytes = 4
+
+operateur_bytes_shift = operateur_bytes << 6
 negative_numb1_shift = negative_numb1 << 5
 negative_numb2_shift = negative_numb2 << 4
 
