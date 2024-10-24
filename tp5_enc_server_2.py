@@ -32,6 +32,7 @@ while True:
             operateur = '/'
 
         print(data_bin)
+        print(operateur)
         numb1_bin = data_bin[9:28]
         numb2_bin = data_bin[28:48]
         print(int(numb1_bin, 2))
