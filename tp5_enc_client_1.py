@@ -27,7 +27,7 @@ while valid:
 
 encoded_msg = msg.encode('utf-8')
 msglen = len(encoded_msg)
-header = msglen.to_bytes(4, byteorder='big')
+header = msglen.to_bytes(4, byteorder='little')
 payload = header + encoded_msg
     
 
