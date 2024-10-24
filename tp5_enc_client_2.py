@@ -44,9 +44,9 @@ negative_numb1 = 0
 
 if msg[0] == "-":
     negative_numb1 = 1
-    operateur = msg[len(numbers[0]) + 1]
+    operateur = msg[len(str(numbers[0])) + 1]
 else:
-    operateur = msg[len(numbers[0])]
+    operateur = msg[len(str(numbers[0]))]
 
 print(operateur)
 firstoctet = negative_numb1 << 6
