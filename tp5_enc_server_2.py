@@ -20,7 +20,7 @@ while True:
         data = conn.recv(6)
         data_bin = utils.bytes_to_bits_binary(data)
 
-        operateur_bin = int(data_bin[0:1],2)
+        operateur_bin = int(data_bin[0:2],2)
 
         if operateur_bin == 1:
             operateur = '+'
