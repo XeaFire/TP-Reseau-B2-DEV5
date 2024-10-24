@@ -41,6 +41,7 @@ numbs = shifted_i | numb2
 numbs_bytes = numbs.to_bytes(5, byteorder='big')
 
 negative_numb1 = 0
+negative_numb2 = 0
 
 if msg[0] == "-":
     negative_numb1 = 1
@@ -48,9 +49,12 @@ if msg[0] == "-":
 else:
     operateur = msg[len(str(numbers[0]))]
 
-print(operateur)
-firstoctet = negative_numb1 << 6
+if msg[len(msg) - len(str(numbers[1]))] == "-":
+    negative_numb2 = 1
 
+print(operateur)
+firstoctet = negative_numb1 << 5
+firstoctet = negative_numb2 << 4
 print(utils.bytes_to_bits_binary(firstoctet.to_bytes(1, byteorder="big")))
 
 print(utils.bytes_to_bits_binary(numbs_bytes))
