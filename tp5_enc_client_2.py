@@ -15,9 +15,8 @@ valid = True
 while valid:
     index = 1
     msg = input("Calcul à envoyer: ")
-    pattern = r'^\s*[\d.]+(?:\s*[\+\-\*\/]\s*[\d.]+)?\s*$'
+    pattern = r'/^\d+\s*+(?:[\+\-\*\/])\s*\d+$/'
     if re.match(pattern, msg):
-        
         numbers = [int(word) for word in re.split(r'\D+', msg) if word]
         valid = False
         for numb in numbers:
@@ -34,10 +33,14 @@ while valid:
 # Encodage à la Tristan Diarhée là
 
 numb1 = numbers[0]
-numb2 = numbers[0]
+numb2 = numbers[1]
 shifted_i = numb1 << 20
 numbs = shifted_i | numb2
 numbs_bytes = numbs.to_bytes(5, byteorder='big')
+
+if "+" in msg:
+    operation = 1
+elif "%-%"
 
 print(utils.bytes_to_bits_binary(numbs_bytes))
 # On envoie
