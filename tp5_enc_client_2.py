@@ -39,8 +39,15 @@ shifted_i = numb1 << 20
 numbs = shifted_i | numb2
 numbs_bytes = numbs.to_bytes(5, byteorder='big')
 
+negative_numb1 = 0
+
+if msg[0] == "-":
+    negative_numb1 = 1
 
 
+firstoctet = negative_numb1 < 6
+
+print(utils.bytes_to_bits_binary(firstoctet))
 
 print(utils.bytes_to_bits_binary(numbs_bytes))
 # On envoie
