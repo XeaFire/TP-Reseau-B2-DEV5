@@ -11,6 +11,8 @@ data = s.recv(1024)
 # Récupération d'une string utilisateur
 msg = input("Calcul à envoyer: ")
 
+valid = True
+
 while valid:
     index = 1
     msg = input("Calcul à envoyer: ")
