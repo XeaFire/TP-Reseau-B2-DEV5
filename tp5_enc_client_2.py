@@ -15,7 +15,7 @@ valid = True
 while valid:
     index = 1
     msg = input("Calcul à envoyer: ")
-    pattern = r'/^\d+\s*+(?:[\+\-\*\/])\s*\d+$/gm'
+    pattern = r'/^\d+\s*+(?:[\+\-\*\/])\s*\d+$'
     if re.match(pattern, msg):
         numbers = [int(word) for word in re.split(r'\D+', msg) if word]
         valid = False
