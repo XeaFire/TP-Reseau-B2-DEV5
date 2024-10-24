@@ -49,7 +49,7 @@ while True:
         
         
         # Evaluation et envoi du résultat
-        res  = eval(bytes(message_received).decode())
+        res  = eval(message_received)
         conn.send(str(res).encode())
          
     except socket.error:
