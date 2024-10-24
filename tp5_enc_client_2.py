@@ -45,7 +45,7 @@ if msg[0] == "-":
     negative_numb1 = 1
 
 
-firstoctet = negative_numb1 < 6
+firstoctet = negative_numb1 << 6
 
 print(utils.bytes_to_bits_binary(firstoctet))
 
