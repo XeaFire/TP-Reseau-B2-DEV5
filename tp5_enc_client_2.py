@@ -9,7 +9,6 @@ s.send('Hello'.encode())
 data = s.recv(1024)
 
 # Récupération d'une string utilisateur
-msg = input("Calcul à envoyer: ")
 
 valid = True
 
