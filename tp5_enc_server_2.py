@@ -31,7 +31,7 @@ while True:
         elif operateur_bin == 4:
             operateur = '/'
 
-        print(data_bin)
+        print(data_bin[28:48])
         print(operateur)
         numb1_bin = data_bin[9:28]
         numb2_bin = data_bin[28:48]
