@@ -53,8 +53,10 @@ if msg[len(msg) - len(str(numbers[1]))] == "-":
     negative_numb2 = 1
 
 print(operateur)
-firstoctet = negative_numb1 << 5
-firstoctet = negative_numb2 << 4
+negative_numb1_shift = negative_numb1 << 5
+negative_numb2_shift = negative_numb2 << 4
+
+firstoctet = negative_numb1_shift | negative_numb2_shift
 print(utils.bytes_to_bits_binary(firstoctet.to_bytes(1, byteorder="big")))
 
 print(utils.bytes_to_bits_binary(numbs_bytes))
