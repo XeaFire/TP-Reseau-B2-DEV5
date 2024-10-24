@@ -18,7 +18,7 @@ while True:
 
         # On reçoit le calcul du client
         data = conn.recv(6)
-        data_bin = utils.bytes_to_bits_binary(data)
+        data_bin = str(utils.bytes_to_bits_binary(data))
 
         operateur_bin = int(data_bin[0:1], 2)
         print(operateur_bin)
