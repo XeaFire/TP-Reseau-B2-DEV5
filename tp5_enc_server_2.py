@@ -45,6 +45,7 @@ while True:
         if data_bin[4] == 1:
             numb2 = '-' + str(numb2)
 
+        print(str(numb1) + operateur + str(numb2))
         res  = eval(str(numb1) + operateur + str(numb2))
         conn.send(str(res).encode())
 
