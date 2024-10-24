@@ -14,16 +14,19 @@ while valid:
     if re.match(pattern, msg):
         
         numbers = [int(word) for word in re.split(r'\D+', msg) if word]
+        valid = False
         for numb in numbers:
             if numb > -1048575 or msg < 1048575:
-                valid = False
-            break
-        else:
-            print("Le nombre ou les nombres n'est / ne sont pas valide(s)")
+                continue
+            else:
+                valid =  True
+                print("Le nombre ou les nombres n'est / ne sont pas valide(s)")
+                break
+            
     else:
         print("Votre input n'est pas valide")
         
-
+print(numbers)
 encoded_msg = msg.encode('utf-8')
 msglen = len(encoded_msg)
 header = msglen.to_bytes(4, byteorder='big')
