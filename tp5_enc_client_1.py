@@ -27,7 +27,8 @@ while valid:
 encoded_msg = msg.encode('utf-8')
 msglen = len(encoded_msg)
 header = msglen.to_bytes(4, byteorder='big')
-payload = header + encoded_msg + "<clafin>"
+footer = "<clafin>"
+payload = header + encoded_msg + footer.encode('utf-8')
     
 
 
