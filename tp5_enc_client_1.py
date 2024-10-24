@@ -2,7 +2,6 @@ import socket
 import re
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect(('5.5.5.11', 13337))
-s.send('Hello'.encode())
 
 # On reçoit la string Hello
 data = s.recv(1024)
@@ -28,7 +27,8 @@ while valid:
 encoded_msg = msg.encode('utf-8')
 msglen = len(encoded_msg)
 header = msglen.to_bytes(4, byteorder='big')
-payload = header + encoded_msg
+footer = "<clafin>"
+payload = header + encoded_msg + footer.encode('utf-8')
     
 
 
