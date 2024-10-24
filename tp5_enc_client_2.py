@@ -49,6 +49,7 @@ if msg[0] == "-":
 else:
     operateur = msg[len(str(numbers[0]))]
 
+print(msg[len(msg) - len(str(numbers[1]))])
 if msg[len(msg) - len(str(numbers[1]))] == "-":
     negative_numb2 = 1
 
