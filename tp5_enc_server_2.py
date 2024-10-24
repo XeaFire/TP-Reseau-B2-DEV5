@@ -18,10 +18,11 @@ while True:
 
         # On reçoit le calcul du client
         data = conn.recv(6)
-        data_bin = str(utils.bytes_to_bits_binary(data))
+        data_bin = utils.bytes_to_bits_binary(data)
 
-        operateur_bin = int(data_bin[0:1], 2)
-        print(operateur_bin)
+        print(data_bin)
+        operateur_bin = data_bin[0:1]
+
         if operateur_bin == 1:
             operateur = '+'
         elif operateur_bin == 2:
@@ -31,10 +32,9 @@ while True:
         elif operateur_bin == 4:
             operateur = '/'
 
-        print(data_bin[28:48])
-        print(operateur)
         numb1_bin = data_bin[9:28]
         numb2_bin = data_bin[28:48]
+
         print(int(numb1_bin, 2))
         print(int(numb2_bin, 2))
         # Evaluation et envoi du résultat
