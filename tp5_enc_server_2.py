@@ -45,7 +45,7 @@ while True:
         if data_bin[4] == 1:
             numb2 = '-' + str(numb2)
 
-        res  = eval(numb1 + operateur + numb2)
+        res  = eval(str(numb1) + operateur + str(numb2))
         conn.send(str(res).encode())
 
     except socket.error:
