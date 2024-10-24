@@ -21,7 +21,7 @@ while True:
         data_bin = utils.bytes_to_bits_binary(data)
 
         operateur_bin = int(data_bin[0:1], 2)
-
+        print(operateur_bin)
         if operateur_bin == 1:
             operateur = '+'
         elif operateur_bin == 2:
