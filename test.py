@@ -18,8 +18,14 @@ while True:
         conn.send("Hello".encode())
 
         # On reçoit le calcul du client
-        data = conn.recv(1024)
+        header = conn.recv(4)
+        if not header:
+            break
 
+        # On lit la valeur
+        msg_len = int.from_bytes(header[0:4], byteorder='big')
+
+        print(f"Lecture des {msg_len} prochains octets")
         # Evaluation et envoi du résultat
         res  = eval(data.decode())
         conn.send(str(res).encode())

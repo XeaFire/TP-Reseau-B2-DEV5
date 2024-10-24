@@ -9,11 +9,6 @@ conn, addr = s.accept()
 
 
 while True:
-    data = conn.recv(1024)
-    if not data: break
-    print(f"Données reçues du client : {data}")
-    conn.send("Hello".encode())
-
     # On lit les 4 premiers octets qui arrivent du client
     # Car dans le client, on a fixé la taille du header à 4 octets
     header = conn.recv(4)
