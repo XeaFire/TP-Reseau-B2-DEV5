@@ -46,12 +46,15 @@ negative_numb2 = 0
 if msg[0] == "-":
     negative_numb1 = 1
     operateur = msg[len(str(numbers[0])) + 1]
+    if msg[len(str(numbers[0])) + 2] == '-':
+        negative_numb2 = 1
 else:
     operateur = msg[len(str(numbers[0]))]
+    if msg[len(str(numbers[0])) + 1] == '-':
+        negative_numb2 = 1
 
 print(msg[len(msg) - len(str(numbers[1]))])
-if msg[len(msg) - len(str(numbers[1]))] == "-":
-    negative_numb2 = 1
+
 
 print(operateur)
 negative_numb1_shift = negative_numb1 << 5
@@ -59,6 +62,10 @@ negative_numb2_shift = negative_numb2 << 4
 
 firstoctet = negative_numb1_shift | negative_numb2_shift
 print(utils.bytes_to_bits_binary(firstoctet.to_bytes(1, byteorder="big")))
+
+
+print(utils.bytes_to_bits_binary(negative_numb1_shift))
+print(utils.bytes_to_bits_binary(negative_numb2_shift))
 
 print(utils.bytes_to_bits_binary(numbs_bytes))
 # On envoie
