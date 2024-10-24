@@ -33,7 +33,8 @@ while True:
 
         numb1_bin = data_bin[9:28]
         numb2_bin = data_bin[28:48]
-
+        print(utils.bytes_to_bits_binary(numb1_bin))
+        print(utils.bytes_to_bits_binary(numb2_bin))
         print(int(numb1_bin, 2))
         print(int(numb2_bin, 2))
         # Evaluation et envoi du résultat
