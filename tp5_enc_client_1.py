@@ -14,9 +14,9 @@ while valid:
     pattern = r'^\s*[\d.]+(?:\s*[\+\-\*\/]\s*[\d.]+)?\s*$'
     if re.match(pattern, msg):
         
-        numbers = [int(word) for word in msg.split() if word.isdigit()]
+        numbers = [int(word) for word in re.split(r'\D+', msg) if word]
         for numb in numbers:
-            if msg > -1048575 or msg < 1048575:
+            if numb > -1048575 or msg < 1048575:
                 valid = False
             break
         else:
